@@ -6,7 +6,7 @@ import { createProductElement } from './helpers/shopFunctions';
 document.querySelector('.cep-button').addEventListener('click', searchCep);
 
 const listProducts = document.querySelector('.products');
-const carts = document.querySelector('.cart_products');
+const carts = document.querySelector('.cart__product');
 
 const addLoading = () => {
   const carregamento = document.createElement('p');
@@ -22,8 +22,8 @@ const removeLoading = () => {
 };
 
 const loadingError = () => {
-  carts.className = 'error';
-  carts.innerHTML = 'Algum erro ocorreu, recarregue a página e tente novamente';
+  listProducts.className = 'error';
+  listProducts.innerHTML = 'Algum erro ocorreu, recarregue a página e tente novamente';
 };
 
 const printProductsinScreen = async () => {
