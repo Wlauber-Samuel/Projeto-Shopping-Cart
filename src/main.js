@@ -54,4 +54,4 @@ const saveLocal = () => {
 window.onload = () => {
   printProductsinScreen();
   saveLocal();
-}
+};
