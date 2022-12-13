@@ -1,13 +1,13 @@
 import { searchCep } from './helpers/cepFunctions';
 import './style.css';
 import { fetchProductsList, fetchProduct } from './helpers/fetchFunctions';
-import { createProductElement, createCartProductElement } from './helpers/shopFunctions';
+import { createProductElement, createCartProductElement, createCustomElement, Price} from './helpers/shopFunctions';
 import { getSavedCartIDs } from './helpers/cartFunctions';
 
 document.querySelector('.cep-button').addEventListener('click', searchCep);
 
 const listProducts = document.querySelector('.products');
-const append = document.querySelector('.cart__products');
+const carts = document.querySelector('.cart__products');
 
 const addLoading = () => {
   const carregamento = document.createElement('p');
@@ -47,11 +47,15 @@ const saveLocal = () => {
   id.map((element) => {
     const data = fetchProduct(element);
     return Promise.all([data]).then((values) => values
-      .map((res) => append.appendChild(createCartProductElement(res))));
+      .map((res) => carts.appendChild(createCartProductElement(res))));
   });
+  Price();
 };
+
 
 window.onload = () => {
   printProductsinScreen();
   saveLocal();
+  Price();
 };
+
