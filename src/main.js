@@ -1,8 +1,11 @@
 import { searchCep } from './helpers/cepFunctions';
 import './style.css';
 import { fetchProductsList, fetchProduct } from './helpers/fetchFunctions';
-import { createProductElement, createCartProductElement, createCustomElement, Price} from './helpers/shopFunctions';
 import { getSavedCartIDs } from './helpers/cartFunctions';
+import {
+  createProductElement,
+  createCartProductElement,
+  Price } from './helpers/shopFunctions';
 
 document.querySelector('.cep-button').addEventListener('click', searchCep);
 
@@ -52,10 +55,8 @@ const saveLocal = () => {
   Price();
 };
 
-
 window.onload = () => {
   printProductsinScreen();
   saveLocal();
   Price();
 };
-

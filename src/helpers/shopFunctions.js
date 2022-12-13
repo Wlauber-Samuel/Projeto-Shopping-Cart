@@ -1,6 +1,5 @@
-import { removeCartID, saveCartID } from './cartFunctions';
+import { removeCartID, saveCartID, getSavedCartIDs } from './cartFunctions';
 import { fetchProduct } from './fetchFunctions';
-import { getSavedCartIDs } from './cartFunctions';
 
 export const Price = async () => {
   const cartItems = getSavedCartIDs();
